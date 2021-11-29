@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+canvas:hover {
+   cursor : none;
+}
+
+.options {
+   /* background-color: red; */
+   display: flex;
+   justify-content: space-around;
+}
+a {
+   font-family: Pacifico,serif;
+   color: white;
+   color: black;
+   font-size: 45px;
+   text-decoration: none;
+}
+
+canvas {
+   margin: auto;
+}
+
+.more {
+   width: 40%;
+   margin: auto;
+   text-align: center;
+}
+h1 {
+   font-size: 40px;
+}
+
+p {
+   font-size: 21px;
+}
