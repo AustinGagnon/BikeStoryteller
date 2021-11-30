@@ -1,4 +1,6 @@
 
+
+
 const canvas = document.getElementById('canvas'),
       context = canvas.getContext('2d'),
       title = document.getElementById('title'),
@@ -358,8 +360,12 @@ function update() {
    updateLandmark();
    // updateCircles();
    renderSky();
+   renderSky();
+   renderLandmark()
    renderLandmark()
    renderRoad();
+   renderRoad();
+   renderCars();
    renderCars();
    // renderCircles();
    renderCharacter();
