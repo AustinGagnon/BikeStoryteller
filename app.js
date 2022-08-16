@@ -10,7 +10,7 @@ const canvas = document.getElementById('canvas'),
       playerHeight = 250,
       playerWidth = 250,
       avgSkySpeed = -1.5,
-      avgStreetSpeed = -4,
+      avgStreetSpeed = -2,
       pageCount = 3;
 
 
@@ -19,7 +19,9 @@ let   Width = canvas.width = window.innerWidth-14,
       background = [],
       cars = [],
       landmarks = [],
-      landmarkURL = ['images/UCF.png','images/Naples_LM.png','images/landmark.png'],
+
+      landmarkURL = ['images/2.png','images/4.png','images/5.png'],
+
       frame = 0;
       vSky = 0,
       dvSky = avgSkySpeed,
@@ -39,14 +41,14 @@ let   Width = canvas.width = window.innerWidth-14,
       expoChar = false;
 
 const pages = [{
-               title : "About Me",
-               body : "One Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet urna aliquam, luctus neque ut, consequat nisi. Vestibulum ac viverra magna, a finibus lorem. Nam pulvinar risus euismod tellus fringilla ullamcorper. Sed sapien augue, iaculis sed orci sed, tempus vulputate lorem. Proin mollis sodales justo, et semper tortor aliquet sed. Aliquam vitae turpis a mi efficitur accumsan. Sed aliquam bibendum congue. Suspendisse condimentum dolor in massa pulvinar, sit amet rhoncus turpis dictum. Nullam pulvinar placerat est quis convallis. Suspendisse potenti. Vivamus cursus dignissim est in ullamcorper. Suspendisse id sagittis massa. Vivamus quis nulla lobortis, blandit libero eu, pharetra erat. Vestibulum ultrices velit vel dolor interdum, et posuere tortor maximus. Vestibulum faucibus diam eget facilisis lacinia. Nullam fermentum ut justo vitae pharetra. Curabitur cursus ex eget aliquam mollis. Curabitur imperdiet accumsan facilisis. Curabitur pharetra et purus vitae ullamcorper. Donec sagittis, mi quis consequat viverra, libero mi aliquam diam, eu ultrices metus nulla vitae augue. Sed viverra dignissim nisi, ac consectetur erat auctor vehicula. Praesent id pretium velit. Nulla sit amet purus volutpat, eleifend nulla eget, consequat erat. Etiam tempus ac tellus eu fermentum. Sed porta enim in diam vulputate sollicitudin. Suspendisse vehicula nisi id pellentesque tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin et luctus urna. Fusce iaculis blandit urna, ac semper diam accumsan ac. Aliquam volutpat vel velit at varius. Aenean eu est quis orci eleifend fringilla. Ut pretium tincidunt nisl ut tempus. Aenean quis ex lacinia, auctor nibh vel, aliquam ipsum. Aliquam varius ac quam nec placerat. Donec nulla nibh, maximus eget porttitor ut, dignissim quis nisi. Nulla sit amet orci in nisi pretium dignissim aliquam ac erat. Nulla facilisi. Nunc vitae vehicula lacus. Vivamus ac elit a orci convallis lobortis. Ut ullamcorper elementum est at condimentum. Aliquam tempor fermentum sem in commodo. Proin auctor semper malesuada. Praesent at nisi ex. Praesent odio lacus, hendrerit condimentum sollicitudin vitae, volutpat ut justo. Duis pellentesque a sapien in rutrum. Donec sed erat pretium, molestie dolor scelerisque, porttitor sem. Quisque sit amet finibus leo, ac ornare velit. Proin auctor tortor dui. Nam sed sem faucibus, aliquam nisi nec, elementum nibh. Nullam suscipit interdum leo a commodo. Fusce tincidunt, dolor sed auctor suscipit, quam est consequat tellus, nec fringilla tortor dui et quam. Sed id ante mauris. Quisque quis pellentesque ipsum, sollicitudin molestie erat."},
+               title : "",
+               body : "Left Click early to get a boost into the next scene."},
             {
-               title : "Naples FL",
-               body: "Two Vestibulum lobortis consectetur tortor id ultricies. Pellentesque at nibh elit. Nullam volutpat egestas tempor. Sed a pulvinar odio. Integer consequat feugiat erat malesuada finibus. In elit augue, placerat vitae tellus vitae, aliquet imperdiet libero. Fusce elementum nulla tempus, feugiat elit eu, vehicula ante. Nulla sagittis dui nec venenatis pellentesque.Sed feugiat tortor sem, sed aliquet neque vestibulum sit amet. Phasellus consequat efficitur velit sed porta. Curabitur tincidunt vel diam sit amet pulvinar. Donec auctor fermentum lacus id porta. Aenean sollicitudin erat metus, nec volutpat felis tempus nec. Sed at aliquam lacus. Nullam sed iaculis sem, accumsan cursus nibh. Ut et fringilla arcu, non sollicitudin risus. Sed mattis rutrum metus, sit amet mollis purus tristique eu. Morbi aliquam ipsum mauris, non sagittis purus consectetur nec. Mauris cursus orci odio, fringilla sagittis libero rhoncus eu. Aliquam egestas velit placerat nibh hendrerit ullamcorper. Donec pretium lectus sed mauris ultrices pellentesque eget a justo. Cras et tristique enim. Ut scelerisque molestie accumsan. Morbi dolor lorem, mollis sit amet tempus ut, facilisis a neque. In in venenatis magna, id tincidunt orci. Donec egestas interdum blandit. Curabitur ac magna at est sollicitudin vehicula. Vestibulum scelerisque nisi eget neque laoreet consectetur. Sed non semper nisl, id ultricies turpis. Nunc ornare ornare euismod. Fusce non tristique elit, quis aliquam tellus. Sed malesuada leo massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non pretium nunc. Praesent volutpat pretium lectus at posuere. Cras a ipsum augue. Aliquam erat volutpat. Praesent vitae arcu diam. Tempor fermentum sem in commodo. Proin auctor semper malesuada. Praesent at nisi ex. Praesent odio lacus, hendrerit condimentum sollicitudin vitae, volutpat ut justo. Duis pellentesque a sapien in rutrum. Donec sed erat pretium, molestie dolor scelerisque, porttitor sem. Quisque sit amet finibus leo, ac ornare velit. Proin auctor tortor dui. Nam sed sem faucibus, aliquam nisi nec, elementum nibh. Nullam suscipit interdum leo a commodo. Fusce tincidunt, dolor sed auctor suscipit, quam est consequat tellus, nec fringilla tortor dui et quam. Sed id ante mauris. Quisque quis pellentesque ipsum, sollicitudin molestie erat."},
+               title : "",
+               body: ""},
             {
-               title : "Passions",
-               body: "Three Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet urna aliquam, luctus neque ut, consequat nisi. Vestibulum ac viverra magna, a finibus lorem. Nam pulvinar risus euismod tellus fringilla ullamcorper. Sed sapien augue, iaculis sed orci sed, tempus vulputate lorem. Proin mollis sodales justo, et semper tortor aliquet sed. Aliquam vitae turpis a mi efficitur accumsan. Sed aliquam bibendum congue. Suspendisse condimentum dolor in massa pulvinar, sit amet rhoncus turpis dictum. Nullam pulvinar placerat est quis convallis. Suspendisse potenti. Vivamus cursus dignissim est in ullamcorper. Suspendisse id sagittis massa. Vivamus quis nulla lobortis, blandit libero eu, pharetra erat. Vestibulum ultrices velit vel dolor interdum, et posuere tortor maximus. Vestibulum faucibus diam eget facilisis lacinia. Nullam fermentum ut justo vitae pharetra. Curabitur cursus ex eget aliquam mollis. Curabitur imperdiet accumsan facilisis. Curabitur pharetra et purus vitae ullamcorper. Donec sagittis, mi quis consequat viverra, libero mi aliquam diam, eu ultrices metus nulla vitae augue. Sed viverra dignissim nisi, ac consectetur erat auctor vehicula. Praesent id pretium velit. Nulla sit amet purus volutpat, eleifend nulla eget, consequat erat. Etiam tempus ac tellus eu fermentum. Sed porta enim in diam vulputate sollicitudin. Suspendisse vehicula nisi id pellentesque tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin et luctus urna. Fusce iaculis blandit urna, ac semper diam accumsan ac. Aliquam volutpat vel velit at varius. Aenean eu est quis orci eleifend fringilla. Ut pretium tincidunt nisl ut tempus. Aenean quis ex lacinia, auctor nibh vel, aliquam ipsum. Aliquam varius ac quam nec placerat. Donec nulla nibh, maximus eget porttitor ut, dignissim quis nisi. Nulla sit amet orci in nisi pretium dignissim aliquam ac erat. Nulla facilisi. Nunc vitae vehicula lacus. Vivamus ac elit a orci convallis lobortis. Ut ullamcorper elementum est at condimentum. Aliquam tempor fermentum sem in commodo. Proin auctor semper malesuada. Praesent at nisi ex. Praesent odio lacus, hendrerit condimentum sollicitudin vitae, volutpat ut justo. Duis pellentesque a sapien in rutrum. Donec sed erat pretium, molestie dolor scelerisque, porttitor sem. Quisque sit amet finibus leo, ac ornare velit. Proin auctor tortor dui. Nam sed sem faucibus, aliquam nisi nec, elementum nibh. Nullam suscipit interdum leo a commodo. Fusce tincidunt, dolor sed auctor suscipit, quam est consequat tellus, nec fringilla tortor dui et quam. Sed id ante mauris. Quisque quis pellentesque ipsum, sollicitudin molestie erat."
+               title : "",
+               body: ""
             }];
 
 
@@ -253,7 +255,9 @@ function initLandmark(url) {
          img : new Image(),
          x0 : Width + 100,
          y0 : 0,
-         width : 1400,
+
+         width : 5400,
+
          height: 365,
       });
       var l = landmarks
@@ -267,7 +271,7 @@ function updateLandmark() {
    console.log(landmarks.length);
    if (landmarks.length >= 1){
       var lm = landmarks[0];
-      lm.x0 += (dvSky / 2) * expoNumTF + expoNum;
+      lm.x0 += (.7 * dvSky) * expoNumTF + expoNum;
    }
 }
 
